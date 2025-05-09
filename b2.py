@@ -16,6 +16,7 @@ def jaccard_similarity(s1, s2):
     return len(intersection) / len(union) if union else 0.0
 
 if __name__ == "__main__":
+
     print("Введите первую строку:")
     s1 = input("> ")
     print("Введите вторую строку:")

@@ -1,12 +1,11 @@
 from collections import deque
 
-
-def is_connected(adj_matrix):
+def is_connected(adj_matrix): # 
     n = len(adj_matrix)
     if n == 0:
         return True
 
-    visited = [False] * n
+    visited = [False] * n  #
     queue = deque()
     queue.append(0)
     visited[0] = True
@@ -62,3 +61,51 @@ for _ in range(n):
 
 result = graph_connectivity_level(adj_matrix)
 print(result)
+
+
+####
+
+'''
+
+
+def count_components_adj_matrix(adj_matrix, n):
+    visited = [False] * n
+    components = 0
+
+    def dfs(node):
+        visited[node] = True
+        for neighbor in range(n):
+            if adj_matrix[node][neighbor] and not visited[neighbor]:
+                dfs(neighbor)
+
+    for node in range(n):
+        if not visited[node]:
+            dfs(node)
+            components += 1
+
+    return components
+
+# Ввод данных
+n = int(input("Введите количество вершин: "))
+adj_matrix = []
+
+print("Введите матрицу смежности построчно (через пробел):")
+for _ in range(n):
+    row = list(map(int, input().split()))
+    adj_matrix.append(row)
+
+# Вывод результата
+print("Количество компонент связности:", count_components_adj_matrix(adj_matrix, n))
+
+
+'''
+
+####
+
+
+
+
+
+
+
+
